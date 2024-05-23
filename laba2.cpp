@@ -69,7 +69,6 @@ void solveEquationsAndStoreResults(std::vector<Student>& students, const std::ve
     }
 }
 
-// Эта функция считает количество успешно решенных уравнений для каждого студента и сохраняет результат в векторе пар (имя студента, количество успешных решений).
 std::vector<std::pair<std::string, int>> calculateSuccessfulSolutions(const std::vector<std::string>& solutions, const std::vector<Student>& students) {
     std::vector<std::pair<std::string, int>> results;
 
@@ -89,8 +88,6 @@ std::vector<std::pair<std::string, int>> calculateSuccessfulSolutions(const std:
             results.push_back(std::make_pair(name, 1));
         }
     }
-
-    // Adjust the count of successful solutions based on the student's status
     for (auto& result : results) {
         for (const auto& student : students) {
             if (result.first == student.name) {
@@ -125,8 +122,6 @@ void printResults(const std::vector<std::pair<std::string, int>>& results, const
         }
     }
 }
-// В главной функции создаются студенты с помощью generateStudents, 
-// считываются уравнения из файла, решаются уравнения, подсчитываются успешные решения и выводятся результаты на экран.
 int main() {
    std::vector<Student> students = generateStudents();
     std::vector<std::string> solutions;
