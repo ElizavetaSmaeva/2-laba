@@ -7,8 +7,6 @@
 
 #include "Student.h"
 #include "QuadraticEquation.h"
-
-// Эта функция решает квадратное уравнение с помощью дискриминанта и сохраняет корни в переданные переменные x1 и x2.
 void solveQuadraticEquation(QuadraticEquation eq, double& x1, double& x2) {
     double D = eq.b * eq.b - 4 * eq.a * eq.c;
     if (D < 0) {
@@ -98,7 +96,6 @@ std::vector<std::pair<std::string, int>> calculateSuccessfulSolutions(const std:
 
     return results;
 }
-// Эта функция выводит результаты успешных решений для каждого студента на экран.
 void printResults(const std::vector<std::pair<std::string, int>>& results, const std::vector<Student>& students) {
     std::cout << "Student Successful solutions\n";
     for (const auto& res : results) {
