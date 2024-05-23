@@ -18,11 +18,9 @@ void solveQuadraticEquation(QuadraticEquation eq, double& x1, double& x2) {
         x2 = (-eq.b - sqrt(D)) / (2 * eq.a);
     }
 }
-// Эта функция проверяет, являются ли переданные корни x1 и x2 решением переданного уравнения.
 bool isCorrectSolution(QuadraticEquation eq, double x1, double x2) {
     return eq.a * x1 * x1 + eq.b * x1 + eq.c == 0 && eq.a * x2 * x2 + eq.b * x2 + eq.c == 0;
 }
-// Эта функция создает 10 студентов со случайным именем и статусом "хороший студент" или нет.
 std::vector<Student> generateStudents() {
     std::vector<Student> students;
     srand(time(0));
@@ -41,7 +39,6 @@ std::vector<Student> generateStudents() {
     }
     return students;
 }
-//Эта функция считывает квадратные уравнения из файла и сохраняет их в вектор QuadraticEquation.
 std::vector<QuadraticEquation> readEquationsFromFile(const std::string& filename) {
     std::ifstream file(filename);
     std::vector<QuadraticEquation> equations;
@@ -54,7 +51,6 @@ std::vector<QuadraticEquation> readEquationsFromFile(const std::string& filename
     }
     return equations;
 }
-// Эта функция решает уравнения из вектора equations, используя функцию solveQuadraticEquation, и сохраняет результаты в вектор solutions.
 void solveEquationsAndStoreResults(std::vector<Student>& students, const std::vector<QuadraticEquation>& equations, std::vector<std::string>& solutions) {
     for (const auto& eq : equations) {
         double x1, x2;
